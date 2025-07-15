@@ -1,21 +1,33 @@
-// Define the Teacher interface
-interface Teacher {
-  readonly firstName: string;
-  readonly lastName: string;
-  fullTimeEmployee: boolean;
-  location: string;
-  yearsOfExperience?: number;
-  [key: string]: any; // This allows additional properties like 'contract'
+// interface describing the class structure
+interface studentclassinterface {
+    workonhomework():string;
+    display():string;
+}
+// interface describing the constructor
+interface studentconstructor{
+    new(firstname: string , lastname: string): studentclassinterface;
 }
 
-// Create a teacher object using the interface
-const teacher3: Teacher = {
-  firstName: 'John',
-  lastName: 'Doe',
-  fullTimeEmployee: false,
-  location: 'London',
-  contract: false,
-};
+// class implementing the interfaces
+class studentclass implements studentclassinterface{
+    private firstname: string;
+    private lastname: string;
 
-// Display the teacher object
-console.log(teacher3);
+    constructor (firstname: string, lastname: string){
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
+    workonhomework(): string {
+        return 'currently working';
+    }
+    display(): string {
+        return this.firstname;
+
+    }
+}
+
+// Example usage
+const student = new StudentClass('John ', 'Doe');
+console.log(student.displayName());      // John 
+console.log(student.workOnHomework());   // Currently working
