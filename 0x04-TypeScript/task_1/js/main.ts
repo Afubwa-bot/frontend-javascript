@@ -27,7 +27,4 @@ class studentclass implements studentclassinterface{
     }
 }
 
-// Example usage
-const student = new StudentClass('John ', 'Doe');
-console.log(student.displayName());      // John 
-console.log(student.workOnHomework());   // Currently working
+
