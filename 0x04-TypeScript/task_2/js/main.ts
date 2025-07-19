@@ -77,3 +77,23 @@ function executeWork(employee: Director | Teacher): string {
     return employee.workTeacherTasks();
   }
 }
+
+// Define the String literal type named Subjects
+type Subjects = 'Math' | 'History';
+
+/**
+ * Teaches a specific class based on the provided subject.
+ * @param todayClass The subject of the class, restricted to 'Math' or 'History'.
+ * @returns A string indicating which subject is being taught.
+ */
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  // This part is technically unreachable if `todayClass` strictly adheres to `Subjects` type,
+  // but good practice to have a fallback or throw an error for unexpected values in more complex scenarios.
+  // For this exercise, the `if/else if` covers all possible `Subjects` values.
+  return `Unknown subject: ${todayClass}`;
+}
