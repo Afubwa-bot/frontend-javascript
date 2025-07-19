@@ -51,6 +51,7 @@ function createEmployee(salary: number | string): Director | Teacher {
     // Otherwise, return a Director (including when salary is a string or >= 500)
     return new Director();
   }
+<<<<<<< HEAD
 }
 
 // --- New Functions for Employee Specific Tasks ---
@@ -97,3 +98,6 @@ function teachClass(todayClass: Subjects): string {
   // For this exercise, the `if/else if` covers all possible `Subjects` values.
   return `Unknown subject: ${todayClass}`;
 }
+=======
+}
+>>>>>>> e07880891fb6468a1963ad321f4804ed4bc0be70
